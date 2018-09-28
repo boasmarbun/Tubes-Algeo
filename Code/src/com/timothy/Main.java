@@ -70,23 +70,42 @@ public class Main {
     }
 
     public static void gauss(double[][] matriks, int matriksBrs, int matriksKol) {
-        int baref,kolef;
-        double pembagi;
-        baref = matriksBrs;
-        kolef = matriksKol;
+        double temp=0;
+        boolean tuker,isfound;
 
-        for(int k=1;k<=baref;k++){
-            //Membagi dengan angka kolom pertama
-            for(int i=k;i<=baref;i++){
-                pembagi = matriks[i][k];
-                for(int j=k;j<=kolef;j++){
-                    matriks[i][j] = (matriks[i][j])/pembagi;
+        for(int i=1;i<=matriksKol;i++){
+            // swap
+            int l = i;
+            tuker = false;
+            while ((l <= matriksBrs) && !(tuker)){
+                if (matriks[l][i] != 0){
+                    tukerBrs(matriks, matriksKol, i, l);
+                    tuker = true;
+                }
+                l++;
+            }
+
+
+            //Gauss
+            for(int j=i+1;j<=matriksBrs;j++){
+                temp=matriks[j][i];
+                for(int k=1;k<=matriksKol;k++){
+                    matriks[j][k] = matriks[j][k] - ((matriks[i][k]) * ((temp) / (matriks[i][i])));
                 }
             }
-            //Mengurangi dengan kolom atasnya
-            for(int i=k+1;i<=baref;i++){
-                for(int j=k;j<=baref;j++){
-                    matriks[i][j]=matriks[i][j]-matriks[k][j];
+        }
+        //Bagi supaya diagonal utama jadi 1
+        for(int i=1;i<=matriksBrs;i++){
+            isfound = false;
+            for(int j=1;j<=matriksKol;j++){
+                if(!isfound){
+                    if(matriks[i][j]!=0){
+                        isfound = true;
+                        temp = matriks[i][j];
+                    }
+                }
+                if(isfound){
+                    matriks[i][j] = matriks[i][j] / temp;
                 }
             }
         }
@@ -104,9 +123,26 @@ public class Main {
 		}
 */
     public static void gaussjordan(double[][] matriks, int matriksBrs, int matriksKol){
+        double temp;
+
+        for (int i = 1; i < matriksKol; i++) //Per Kolom, biarin paling atas lanjut kebawah
+        {
+            // swap dulu
 
 
-
+            for (int j = i + 1; j <= matriksBrs; j++)
+            {
+                temp = matriks[j][i];
+                for (int k = 1; k <= matriksKol; k++)
+                {
+                    matriks[j][k] = matriks[j][k] - ((matriks[i][k]) * (temp/(matriks[i][i])));
+                }
+            }
+        }
     }
 
+    public static void splgauss(double[][] matriks,int matriksKol){
+        double[] variabel = new double[matriksKol+1];
+
+    }
 }
