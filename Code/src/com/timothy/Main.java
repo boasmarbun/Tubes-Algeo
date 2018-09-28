@@ -10,15 +10,6 @@ public class Main {
         Scanner scan = new Scanner(System.in);
         int matriksBrs;
         int matriksKol;
-        matriksBrs = matriksKol = 0;
-        getBrs(scan, matriksBrs);
-        getKol(scan, matriksKol);
-        int[][] matriks = new int[matriksBrs+1][matriksKol+1];
-        inputMatriks(scan, matriks, matriksBrs, matriksKol);
-        printMatriks(matriks, matriksBrs, matriksKol);
-    }
-
-    public static void getBrs(Scanner scan, int matriksBrs) {
         System.out.print("Masukan Jumlah Baris Matriks: ");
         matriksBrs = scan.nextInt();
         while (matriksBrs <= 0) {
@@ -26,9 +17,6 @@ public class Main {
             System.out.print("Masukan Jumlah Baris Matriks: ");
             matriksBrs = scan.nextInt();
         }
-    }
-
-    public static void getKol(Scanner scan, int matriksKol) {
         System.out.print("Masukan Jumlah Kolom Matriks: ");
         matriksKol = scan.nextInt();
         while (matriksKol <= 0) {
@@ -36,6 +24,9 @@ public class Main {
             System.out.print("Masukan Jumlah Kolom Matriks: ");
             matriksKol = scan.nextInt();
         }
+        int[][] matriks = new int[matriksBrs+1][matriksKol+1];
+        inputMatriks(scan, matriks, matriksBrs, matriksKol);
+        printMatriks(matriks, matriksBrs, matriksKol);
     }
 
     public static void inputMatriks(Scanner scan, int[][] matriks, int matriksBrs, int matriksKol) {
