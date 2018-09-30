@@ -84,8 +84,6 @@ public class Main {
                 }
                 l++;
             }
-
-
             //Gauss
             for(int j=i+1;j<=matriksBrs;j++){
                 temp=matriks[j][i];
@@ -110,39 +108,38 @@ public class Main {
             }
         }
     }
-/* for (i = 1; i < (M).NKolEff; i++) //Per Kolom, biarin paling atas lanjut kebawah
-		{
-			for (j = i + 1; j <= (M).NBrsEff; j++)
-			{
-				temp = MTemp[j][i];
-				for (k = 1; k <= (M).NBrsEff; k++)
-				{
-					MTemp[j][k] = MTemp[j][k] - ((MTemp[i][k] * 1.0) * ((temp * 1.0) / ((MTemp[i][i]) * 1.0)));
-				}
-			}
-		}
-*/
+
     public static void gaussjordan(double[][] matriks, int matriksBrs, int matriksKol){
         double temp;
 
-        for (int i = 1; i < matriksKol; i++) //Per Kolom, biarin paling atas lanjut kebawah
-        {
-            // swap dulu
-
-
-            for (int j = i + 1; j <= matriksBrs; j++)
-            {
-                temp = matriks[j][i];
-                for (int k = 1; k <= matriksKol; k++)
-                {
-                    matriks[j][k] = matriks[j][k] - ((matriks[i][k]) * (temp/(matriks[i][i])));
+        gauss(matriks, matriksBrs, matriksKol);
+        //atas segitiga atas jadi 0
+        for(int i=(matriksKol - 1);i>=1;i--){
+            //Gauss
+            for(int j=matriksBrs;j>=i+1;j--){
+                temp=matriks[j][i];
+                for(int k=1;k<=matriksKol;k++){
+                    matriks[j][k] = matriks[j][k] - ((matriks[i][k]) * ((temp) / (matriks[i][i])));
                 }
             }
         }
-    }
 
-    public static void splgauss(double[][] matriks,int matriksKol){
+
+
+
+    }
+    /*
+    public static void splgauss(double[][] matriks,int matriksKol,int matriksBrs){
+        //Matriks yang menjadi input adalah matriks augmented
         double[] variabel = new double[matriksKol+1];
+        int temp;
 
+        for(int i=matriksBrs;i>=1;i--){
+            temp=0;
+            for(int j=matriksKol-1;j>=1;j--){
+                temp +=
+            }
+        }
     }
+    */
 }

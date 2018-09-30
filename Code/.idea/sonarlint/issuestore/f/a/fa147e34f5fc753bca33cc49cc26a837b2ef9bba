@@ -1,8 +1,5 @@
 
-Msquid:S1172".Remove this unused method parameter "matriks".(ÎÌãƒ8¾™Ò‹â,
+jsquid:CommentedOutCodeLine„"<This block of commented-out lines of code should be removed.(ûçİ8ÎÄË¥â,
+Msquid:S1066d"/Merge this if statement with the enclosing one.(ÿéÎë8úÌ¥Šâ,
 Bsquid:S1659J"%Declare "isfound" on a separate line.(Íü„p8Ê€ÔŠâ,
-Msquid:S1066f"/Merge this if statement with the enclosing one.(ÿéÎë8úÌ¥Šâ,
-Qsquid:S1481‘"-Remove this unused "variabel" local variable.(µ€ğÉıÿÿÿÿ8¾™Ò‹â,
-nsquid:CommentedOutCodeLineq"<This block of commented-out lines of code should be removed.(š³ô™üÿÿÿÿ8Îåö„â,
 usquid:S3776H"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(É‘•şÿÿÿÿ8úÌ¥Šâ,
-`squid:S1854‘"<Remove this useless assignment to local variable "variabel".(µ€ğÉıÿÿÿÿ8¾™Ò‹â,
