@@ -28,7 +28,7 @@ public class Main {
         double[][] matriks = new double[matriksBrs+1][matriksKol+1];
         inputMatriks(scan, matriks, matriksBrs, matriksKol);
         gauss(matriks, matriksBrs, matriksKol);
-        splgauss(matriks, matriksBrs, matriksKol);
+        splgauss(matriks, matriksKol, matriksBrs);
         printMatriks(matriks, matriksBrs, matriksKol);
     }
 
@@ -131,8 +131,8 @@ public class Main {
     public static void splgauss(double[][] matriks,int matriksKol,int matriksBrs){
         //Matriks yang menjadi input adalah matriks augmented
         double[] variabel = new double[matriksKol+1]; //Menyimpan nilai variabel
-        int temp; //Menyimpan hasil penjumlahan
-        int k; //Mencari angka yang bukan 0 dalam satu baris
+        double temp; //Menyimpan hasil penjumlahan
+        int j,k,l; //Mencari angka yang bukan 0 dalam satu baris
         int count0; //index angka bukan 0 pertama
 
         //Inisialisasi array spl
@@ -146,22 +146,29 @@ public class Main {
             count0= 0;
 
             //Mencari angka diagonal utama
-            for(k=1;k<=matriksBrs;k++) {
+            k = 1;
+            while ((count0 == 0) && (k<=matriksKol)){
                 if ((matriks[i][k]) != 0) {
                     count0++;
-                    break;
                 }
+                k++;
             }
-            if(count0>0) { //Jika terdapatn nilai diagonal utama
-                variabel[k] = matriks[i][k]; //Simpan nilai diagonal utama dalam array variabel
-                for(int j=matriksKol-1;j>=1;j--) {
-                    temp += variabel[j] * matriks[i][j];
+            k--;
+            if((count0>0) && (k != matriksKol)) { //Jika terdapatn nilai diagonal utama
+                j = matriksKol-1;
+                while (j > k) {
+                    //if nonparametrik
+                        temp += variabel[j] * matriks[i][j];
+                    j--;
                 }
-                variabel[k] = matriks[i][matriksKol] / temp; //Simpan nilai variabel yang benar
+                variabel[k] = matriks[i][matriksKol] - temp; //Simpan nilai variabel yang benar
+            }
+            else {
+                //variabel[k] = 0; //parametrik
             }
         }
 
-        for(int i=1 ;i<=matriksKol;i++){
+        for(int i=1 ;i<=matriksKol-1;i++){
             System.out.println(variabel[i]);
         }
     }
