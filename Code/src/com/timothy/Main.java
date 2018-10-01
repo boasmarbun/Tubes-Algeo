@@ -28,6 +28,7 @@ public class Main {
         double[][] matriks = new double[matriksBrs+1][matriksKol+1];
         inputMatriks(scan, matriks, matriksBrs, matriksKol);
         gauss(matriks, matriksBrs, matriksKol);
+        splgauss(matriks, matriksBrs, matriksKol);
         printMatriks(matriks, matriksBrs, matriksKol);
     }
 
@@ -123,23 +124,45 @@ public class Main {
                 }
             }
         }
-
-
-
-
     }
-    /*
+
+
+
     public static void splgauss(double[][] matriks,int matriksKol,int matriksBrs){
         //Matriks yang menjadi input adalah matriks augmented
-        double[] variabel = new double[matriksKol+1];
-        int temp;
+        double[] variabel = new double[matriksKol+1]; //Menyimpan nilai variabel
+        int temp; //Menyimpan hasil penjumlahan
+        int k; //Mencari angka yang bukan 0 dalam satu baris
+        int count0; //index angka bukan 0 pertama
 
+        //Inisialisasi array spl
+        for(int i=1;i<=matriksKol;i++) {
+            variabel[i] = 0;
+        }
+
+        //Penyelesaian
         for(int i=matriksBrs;i>=1;i--){
             temp=0;
-            for(int j=matriksKol-1;j>=1;j--){
-                temp +=
+            count0= 0;
+
+            //Mencari angka diagonal utama
+            for(k=1;k<=matriksBrs;k++) {
+                if ((matriks[i][k]) != 0) {
+                    count0++;
+                    break;
+                }
+            }
+            if(count0>0) { //Jika terdapatn nilai diagonal utama
+                variabel[k] = matriks[i][k]; //Simpan nilai diagonal utama dalam array variabel
+                for(int j=matriksKol-1;j>=1;j--) {
+                    temp += variabel[j] * matriks[i][j];
+                }
+                variabel[k] = matriks[i][matriksKol] / temp; //Simpan nilai variabel yang benar
             }
         }
+
+        for(int i=1 ;i<=matriksKol;i++){
+            System.out.println(variabel[i]);
+        }
     }
-    */
 }

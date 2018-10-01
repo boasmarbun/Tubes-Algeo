@@ -1,5 +1,2 @@
 
-jsquid:CommentedOutCodeLine„"<This block of commented-out lines of code should be removed.(ûçÝ8ÎÄË¥â,
-Msquid:S1066d"/Merge this if statement with the enclosing one.(ÿéÎë8úÌ¥Šâ,
-Bsquid:S1659J"%Declare "isfound" on a separate line.(Íü„p8Ê€ÔŠâ,
-usquid:S3776H"RRefactor this method to reduce its Cognitive Complexity from 25 to the 15 allowed.(É‘•þÿÿÿÿ8úÌ¥Šâ,
+¤squid:S1186F"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àÌèâøÿÿÿÿ8Š•‰þá,
