@@ -14,8 +14,12 @@ public class Main {
         int matriksBrs;
         int matriksKol;
         Scanner scan = new Scanner(System.in);
-        int user_choice1, user_choice2, user_choice3; // user_choice1 = pilihan menu; user_choice2 = pilihan metode;
+        PrintStream printfile = new PrintStream(new File("Hasil.txt"));
+        int user_choice1, user_choice2, user_choice3, user_choice4; // user_choice1 = pilihan menu; user_choice2 = pilihan metode, user_choice4 = print ke file atau tidak;
         user_choice1 = 0;
+        user_choice2 = 0;
+        user_choice3 = 0;
+        user_choice4 = 0;
         while (user_choice1 != 3) {
             System.out.println("MENU");
             System.out.println("1. Sistem Persamaan Linear");
@@ -29,7 +33,7 @@ public class Main {
                 System.out.println("Input salah, masukan input lagi.");
                 user_choice1 = scan.nextInt();
             }
-            if (user_choice1 != 3) {
+            //if (user_choice1 != 3) {
                 System.out.println("Pilihan metode :");
                 System.out.println("1. Metode eliminasi Gauss");
                 System.out.println("2. Metode eliminasi Gauss-Jordan");
@@ -46,6 +50,15 @@ public class Main {
                     System.out.println("Input salah, masukan input lagi.");
                     user_choice3 = scan.nextInt();
                 }
+                System.out.println("Apakah hasil ingin di save ke file? ");
+                System.out.println("1. IYA");
+                System.out.println("2. TIDAK");
+                user_choice4 = scan.nextInt();
+                while ((user_choice4 != 1) && (user_choice4 != 2)){
+                    System.out.println("Input salah, masukan input lagi.");
+                    user_choice4 = scan.nextInt();
+                }
+            //}
                 if ((user_choice1 == 1) && (user_choice3 == 1)) { // SPL, baca dari keyboard
                     int m, n, i, j; // m = jmlh baris, n = jumlah kolom, i = index baris, j = index kolom;
                     System.out.println("Masukkan jumlah baris matriks");
@@ -109,46 +122,63 @@ public class Main {
                     matriksBrs = n + 1;
                     matriksKol = 2;
                 }
-                double[][] variabel = new double[matriksKol + 1][2];
+                double[][] variabel = new double[matriksKol + 1][matriksKol + 1];
+                int mark[] = new int[matriksKol];
                 if (user_choice1 == 1) { //SPL
                     if (user_choice2 == 1) { //SPL, Gauss
-                        splgauss(matriks, matriksBrs, matriksKol, variabel);
-                        printvariabel(matriks, matriksBrs, matriksKol, variabel);
+                        splgauss(matriks, matriksBrs, matriksKol, variabel, mark);
+                        printvariabel(matriks, matriksBrs, matriksKol, variabel, mark);
                     } else { //SPL, GaussJordan
-                        splgaussjordan(matriks, matriksBrs, matriksKol, variabel);
-                        printvariabel(matriks, matriksBrs, matriksKol, variabel);
+                        splgaussjordan(matriks, matriksBrs, matriksKol, variabel, mark);
+                        printvariabel(matriks, matriksBrs, matriksKol, variabel, mark);
                     }
                 } else if (user_choice1 == 2) { //Interpolasi
                     if (user_choice2 == 1) { //Interpolasi, Gauss
-                        InterpolasiGauss(matriks, matriksBrs, variabel);
+                        InterpolasiGauss(matriks, matriksBrs, variabel, mark);
                     } else { //Interpolasi, GaussJordan
-                        InterpolasiGaussJordan(matriks, matriksBrs, variabel);
+                        InterpolasiGaussJordan(matriks, matriksBrs, variabel, mark);
                     }
+                }
+                if(user_choice4 == 1) { // user minta output di save ke file
+                    PrintStream console = System.out;
+                    System.setOut(printfile);
+                    if(user_choice1 == 1){ // SPL
+                        printvariabel(matriks, matriksBrs, matriksKol, variabel, mark);
+                    }
+                    else{
+                        if ((user_choice1 == 2) && (user_choice2 == 1)){// Interpolasi, Gauss
+                            InterpolasiGauss(matriks, matriksBrs, variabel, mark);
+                        }
+                        else if ((user_choice1 == 2) && (user_choice2 == 2)){// Interpolasim Gauss Jordan
+                            InterpolasiGaussJordan(matriks, matriksBrs, variabel, mark);
+                        }
+                    }
+                    System.setOut(console);
                 }
             }
         }
 
-    }
+    //}
 
-    public static void inputMatriks(Scanner scan, double[][] matriks, int matriksBrs, int matriksKol) {
-        System.out.println("Masukan Matriks");
-        for (int i = 1; i <= matriksBrs; i++) {
-            for (int j = 1; j <= matriksKol; j++) {
-                matriks[i][j] = scan.nextInt();
-            }
-        }
-    }
+//    public static void inputMatriks(Scanner scan, double[][] matriks, int matriksBrs, int matriksKol) {
+//        System.out.println("Masukan Matriks");
+//        for (int i = 1; i <= matriksBrs; i++) {
+//            for (int j = 1; j <= matriksKol; j++) {
+//                matriks[i][j] = scan.nextInt();
+//            }
+//        }
+//    }
 
-    public static void printMatriks(double[][] matriks, int matriksBrs, int matriksKol){
-        for (int i = 1; i <= matriksBrs; i++)
-        {
-            for (int j=1; j <= matriksKol; j++)
-            {
-                System.out.print(matriks[i][j] + " ");
-            }
-            System.out.println();
-        }
-    }
+//    public static void printMatriks(double[][] matriks, int matriksBrs, int matriksKol){
+//        for (int i = 1; i <= matriksBrs; i++)
+//        {
+//            for (int j=1; j <= matriksKol; j++)
+//            {
+//                System.out.print(matriks[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+//    }
 
     public static void tukerBrs(double[][] matriks, int matriksKol, int bar1, int bar2){
         double[] brstemp = new double[matriksKol+1];
@@ -274,7 +304,7 @@ public class Main {
 //        printMatriks(matriks, matriksBrs, matriksKol);
     }
 
-    public static void splgauss(double[][] matriks,int matriksBrs,int matriksKol, double[][] variabel){
+    public static void splgauss(double[][] matriks,int matriksBrs,int matriksKol, double[][] variabel, int mark[]){
         //Matriks yang menjadi input adalah matriks augmented
         int j,k; //Mencari angka yang bukan 0 dalam satu baris
         int count0; //index angka bukan 0 pertama
@@ -282,9 +312,12 @@ public class Main {
         REF(matriks, matriksBrs, matriksKol);
 
         //Inisialisasi array spl
-        for(int i=1;i<=matriksKol;i++) {
-            variabel[i][0] = 0; //0 jika parametrik, 1 jika non-parametrik
-            variabel[i][1] = 0; //Value
+        for(int i=0;i<=matriksKol-1;i++) {
+            mark[i] = 0; //0 jika parametrik, 1 jika non-parametrik
+            for (int m=0; m<=matriksKol-1; m++){
+                variabel[i][m] = 0;
+            }
+            variabel[i][i] = 1;
         }
 
         //Penyelesaian
@@ -301,95 +334,144 @@ public class Main {
             }
             k--;
             if((count0>0) && (k != matriksKol)) { //Jika terdapat nilai diagonal utama
-                variabel[k][0] = 1;
-                variabel[k][1] = matriks[i][matriksKol];
-//                System.out.print(variabel[k][1]);
+                mark[k] = 1;
+                variabel[k][0] = matriks[i][matriksKol];
+                variabel[k][k] = 0;
                 j = matriksKol - 1;
                 while (j > k) { //Supaya tidak merubah diagonal utama
-                    if (variabel[j][0] == 1) {
-                        variabel[k][1] -= variabel[j][1] * matriks[i][j];
-//                        System.out.print(variabel[k][1]);
+                    if (mark[j] == 1) {
+                        variabel[k][0] -= variabel[j][0] * matriks[i][j];
+                    }
+                    else if (mark[j] == 0) {
+                        mark[k] = 0;
+                        for (int l = 1; l <= matriksKol -1; l++) {
+                            variabel[k][l] -= matriks[i][j] * variabel[j][l];
+                        }
                     }
                     j--;
                 }
             }
-//            System.out.print(variabel[k][1]);
+            else if ((count0 > 0) && (k == matriksKol)) {
+                mark[0] = 1; //menandakan tidak ada solusi
+            }
         }
-//        printMatriks(matriks, matriksBrs, matriksKol);
     }
 
-    public static void splgaussjordan(double[][] matriks,int matriksBrs,int matriksKol, double[][] variabel){
+    public static void splgaussjordan(double[][] matriks,int matriksBrs,int matriksKol, double[][] variabel, int[] mark){
         //Matriks yang menjadi input adalah matriks augmented
         RREF(matriks, matriksBrs, matriksKol);
         int count0;
-        int k;
+        int j,k;
 
-        for(int i=1;i<=matriksKol;i++) {
-            variabel[i][0] = 0; //0 jika parametrik, 1 jika non-parametrik
-            variabel[i][1] = 0; //Value
+        for(int i=0;i<=matriksKol-1;i++) {
+            mark[i] = 0; //0 jika parametrik, 1 jika non-parametrik
+            for (int m=0; m<=matriksKol-1; m++){
+                variabel[i][m] = 0;
+            }
+            variabel[i][i] = 1;
         }
 
         //Penyelesaian
-        for(int i=matriksBrs;i>=1;i--){
-            count0= 0;
+        for(int i=matriksBrs;i>=1;i--) {
+            count0 = 0;
 
             //Mencari angka diagonal utama
             k = 1;
-            while ((count0 == 0) && (k<=matriksKol)) {
+            while ((count0 == 0) && (k <= matriksKol)) {
                 if ((matriks[i][k]) != 0) {
                     count0++;
                 }
                 k++;
             }
             k--;
-            if((count0>0) && (k != matriksKol)) { //Jika terdapat nilai diagonal utama
-                variabel[k][0] = 1;
-                variabel[k][1] = matriks[i][matriksKol];
-//                System.out.print(variabel[k][1]);
-                }
-            }
-//            System.out.print(variabel[k][1]);
-
-    }
-
-    public static void printvariabel(double[][] matriks,int matriksBrs,int matriksKol, double[][] variabel){
-        //Matriks yang menjadi input adalah matriks augmented
-        int brs;
-
-        brs = 0;
-        for(int i=1;i<=matriksKol-1;i++) {
-            if (variabel[i][0] == 0){
-                System.out.println("x" + i + "=" + "x" + i);
-            }
-            else {
-                if (variabel[i][1] == 0){
-                    System.out.print("x" + i + "=");
-                }
-                else {
-                    System.out.print("x" + i + "=" + variabel[i][1]);
-                }
-                brs++;
-                for (int m=1; m<=matriksKol-1; m++) {
-                    if (variabel[m][0] == 0) {
-                        if (matriks[brs][m] > 0) {
-                            System.out.print("-" + matriks[brs][m] + "x" + m);
-                        }
-                        else if (matriks[brs][m] < 0) {
-                            System.out.print(matriks[brs][m] + "x" + m);
+            if ((count0 > 0) && (k != matriksKol)) { //Jika terdapat nilai diagonal utama
+                mark[k] = 1;
+                variabel[k][k] = 0;
+                variabel[k][0] = matriks[i][matriksKol];
+                j = matriksKol - 1;
+                while (j > k) { //Supaya tidak merubah diagonal utama
+                    if (mark[j] == 0) {
+                        mark[k] = 0;
+                        for (int l = 1; l <= matriksKol -1; l++) {
+                            variabel[k][l] -= matriks[i][j] * variabel[j][l];
                         }
                     }
+                    j--;
+                }
+            }
+            else if ((count0 > 0) && (k == matriksKol)) {
+                mark[0] = 1; //menandakan tidak ada solusi
+            }
+        }
+    }
+
+    public static void printvariabel(double[][] matriks,int matriksBrs,int matriksKol, double[][] variabel, int[] mark){
+        //Matriks yang menjadi input adalah matriks augmented
+        int j;
+        boolean pertama;
+
+        if (mark[0] == 0){
+            for (int i = 1; i <= matriksKol - 1; i++) {
+                System.out.print("x" + i + " = ");
+                pertama = false;
+                j = 0;
+                if (!(pertama)){
+                    if (variabel[i][j] > 0) {
+                        System.out.print(variabel[i][j]);
+                        pertama = true;
+                    } else if (variabel[i][j] < 0) {
+                        System.out.print("- " + (variabel[i][j] * -1));
+                        pertama = true;
+                    }
+                }
+                j++;
+                while (j <= matriksKol - 1){
+                    if (!(pertama)){
+                        if (variabel[i][j] > 0) {
+                            if (variabel[i][j] != 1){
+                                System.out.print(variabel[i][j]);
+                            }
+                            System.out.print("x" + j);
+                            pertama = true;
+                        } else if (variabel[i][j] < 0) {
+                            if (variabel[i][j] != -1){
+                                System.out.print("- " + (variabel[i][j] * -1));
+                            }
+                            System.out.print("x" + j);
+                            pertama = true;
+                        }
+                    }
+                    else {
+                        if (variabel[i][j] > 0) {
+                            System.out.print(" + ");
+                            if (variabel[i][j] != 1){
+                                System.out.print(variabel[i][j]);
+                            }
+                            System.out.print("x" + j);
+                        } else if (variabel[i][j] < 0) {
+                            System.out.print(" - ");
+                            if (variabel[i][j] != -1){
+                                System.out.print(variabel[i][j] * -1);
+                            }
+                            System.out.print("x" + j);
+                        }
+                    }
+                    j++;
                 }
                 System.out.println();
             }
         }
-
+        else if (mark[0] == 1){
+            System.out.println("Tidak ada solusi");
+        }
 
     }
 
-    public static void InterpolasiGauss(double[][] matriks, int matriksBrs, double[][] variabel) {
+    public static void InterpolasiGauss(double[][] matriks, int matriksBrs, double[][] variabel, int[] mark) {
         //splgauss( double[][] matriks, int matriksKol, int matriksBrs);
         double[][] tabelinterpolasi = new double[matriksBrs+1][matriksBrs+2];
-        double[][] variabel1 = new double [matriksBrs+2][2];
+        double[][] variabel1 = new double [matriksBrs+2][matriksBrs+2];
+        int[] mark1 = new int[matriksBrs+2];
         int i;
 
         for(int j=1;j<=matriksBrs;j++){
@@ -404,41 +486,48 @@ public class Main {
 //        printMatriks(tabelinterpolasi, matriksBrs, (matriksBrs + 1));
 //        REF(tabelinterpolasi,matriksBrs,(matriksBrs + 1));
 //        printMatriks(tabelinterpolasi, matriksBrs, (matriksBrs + 1));
-        splgauss(tabelinterpolasi, matriksBrs,(matriksBrs + 1),variabel1);
+        splgauss(tabelinterpolasi, matriksBrs,(matriksBrs + 1),variabel1, mark1);
         //variabel[i][1]
         //tabelinterpolasi[i][matriksBrs+1];
 
         //Print persamaan
         i = matriksBrs;
         if (i == 1){
-            System.out.print("y = " + variabel1[i][1]);
+            System.out.print("y = " + variabel1[i][0]);
         }
         else {
-            System.out.print("y = " + variabel1[i][1] + "x^" + (i-1));
+            System.out.print("y = " + variabel1[i][0] + "x^" + (i-1));
         }
         i--;
         while (i>1){
-            if (variabel1[i][1] >= 0){
-                System.out.print(" + " + variabel1[i][1] + "x^" + (i-1));
+            if (variabel1[i][0] > 0){
+                System.out.print(" + " + variabel1[i][0] + "x^" + (i-1));
             }
-            else {
-                System.out.print(" - " + (variabel1[i][1] * -1) + "x^" + (i-1));
+            else if (variabel1[i][0] < 0) {
+                System.out.print(" - " + (variabel1[i][0] * -1) + "x^" + (i-1));
             }
             i--;
         }
         if (tabelinterpolasi[i][matriksBrs+1] > 0){
-            System.out.print(" + " + variabel1[i][1]);
+            if(variabel1[i][0] > 0) {
+                System.out.print(" + " + variabel1[i][0]);
+            }
+            else if(variabel1[i][0] < 0){
+                System.out.print(" " + variabel1[i][0]);
+            }
         }
+
         else if (tabelinterpolasi[i][matriksBrs+1] < 0){
-            System.out.print(" " + variabel1[i][1]);
+            System.out.print(" " + variabel1[i][0]);
         }
         System.out.println();
     }
 
-    public static void InterpolasiGaussJordan(double[][] matriks, int matriksBrs, double[][] variabel) {
+    public static void InterpolasiGaussJordan(double[][] matriks, int matriksBrs, double[][] variabel, int[] mark) {
         //splgauss( double[][] matriks, int matriksKol, int matriksBrs);
         double[][] tabelinterpolasi = new double[matriksBrs+1][matriksBrs+2];
-        double[][] variabel1 = new double [matriksBrs+2][2];
+        double[][] variabel1 = new double [matriksBrs+2][matriksBrs+2];
+        int[] mark1 = new int[matriksBrs+2];
         int i;
 
         for(int j=1;j<=matriksBrs;j++){
@@ -453,34 +542,42 @@ public class Main {
 //        printMatriks(tabelinterpolasi, matriksBrs, (matriksBrs + 1));
 //        REF(tabelinterpolasi,matriksBrs,(matriksBrs + 1));
 //        printMatriks(tabelinterpolasi, matriksBrs, (matriksBrs + 1));
-        splgaussjordan(tabelinterpolasi, matriksBrs,(matriksBrs + 1),variabel1);
+        splgaussjordan(tabelinterpolasi, matriksBrs,(matriksBrs + 1),variabel1, mark1);
         //variabel[i][1]
         //tabelinterpolasi[i][matriksBrs+1];
 
         //Print persamaan
         i = matriksBrs;
         if (i == 1){
-            System.out.print("y = " + variabel1[i][1]);
+            System.out.print("y = " + variabel1[i][0]);
         }
         else {
-            System.out.print("y = " + variabel1[i][1] + "x^" + (i-1));
+            System.out.print("y = " + variabel1[i][0] + "x^" + (i-1));
         }
         i--;
         while (i>1){
-            if (variabel1[i][1] >= 0){
-                System.out.print(" + " + variabel1[i][1] + "x^" + (i-1));
+            if (variabel1[i][0] > 0){
+                System.out.print(" + " + variabel1[i][0] + "x^" + (i-1));
             }
-            else {
-                System.out.print(" - " + (variabel1[i][1] * -1) + "x^" + (i-1));
+            else if (variabel1[i][0] < 0){
+                System.out.print(" - " + (variabel1[i][0] * -1) + "x^" + (i-1));
             }
             i--;
         }
+
         if (tabelinterpolasi[i][matriksBrs+1] > 0){
-            System.out.print(" + " + variabel1[i][1]);
+            if(variabel1[i][0] > 0) {
+                System.out.print(" + " + variabel1[i][0]);
+            }
+            else if(variabel1[i][0] < 0){
+                System.out.print(" " + variabel1[i][0]);
+            }
         }
         else if (tabelinterpolasi[i][matriksBrs+1] < 0){
-            System.out.print(" " + variabel1[i][1]);
+            System.out.print(" " + variabel1[i][0]);
         }
         System.out.println();
     }
 }
+
+

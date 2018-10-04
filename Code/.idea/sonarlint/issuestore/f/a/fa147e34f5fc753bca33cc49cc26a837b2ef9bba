@@ -1,49 +1,2 @@
 
-vsquid:S3776•"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(ïª…»ùÿÿÿÿ8Üç½Úã,
-Usquid:S1172ã"1Remove this unused method parameter "matriksBrs".(Äƒßôÿÿÿÿÿ8Üç½Úã,
-jsquid:CommentedOutCodeLine¢"<This block of commented-out lines of code should be removed.(ø²¸”8Üç½Úã,
-usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁØÇÀýÿÿÿÿ8€·Öã,
-Bsquid:S16592"Declare "n" on a separate line.(ËÄ—øùÿÿÿÿ8ÔìŽÖã,
-osquid:CommentedOutCodeLine¼"<This block of commented-out lines of code should be removed.(»Ý²œÿÿÿÿÿ8ÊýÚã,
-jsquid:CommentedOutCodeLineÊ"<This block of commented-out lines of code should be removed.(§¸ÿÍ8‰‹ÂÚã,
-Lsquid:S1481Ù"(Remove this unused "brs" local variable.(—´²úÿÿÿÿ8Üç½Úã,
-osquid:CommentedOutCodeLineß"<This block of commented-out lines of code should be removed.(»Ý²œÿÿÿÿÿ8Üç½Úã,
-Nsquid:S1172…"/Remove this unused method parameter "variabel".(ýíµ8‰‹ÂÚã,
-jsquid:CommentedOutCodeLineÞ"<This block of commented-out lines of code should be removed.(êó„Š8Üç½Úã,
-vsquid:S3776ã"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(Äƒßôÿÿÿÿÿ8‰‹ÂÚã,
-Msquid:S1659"*Declare "user_choice2" on a separate line.(ÁØÇÀýÿÿÿÿ8€·Öã,
-nsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÁØÇÀýÿÿÿÿ8€·Öã,
-osquid:CommentedOutCodeLine†"<This block of commented-out lines of code should be removed.(ê¦ÆÅÿÿÿÿÿ8‰‹ÂÚã,
-Nsquid:S1172¶"/Remove this unused method parameter "variabel".(£÷ÑÑ8‰‹ÂÚã,
-jsquid:CommentedOutCodeLine’"<This block of commented-out lines of code should be removed.(ëÎõŠ8¶ÇòÚã,
-usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁØÇÀýÿÿÿÿ8€·Öã,
-osquid:CommentedOutCodeLineÜ"<This block of commented-out lines of code should be removed.(»Ý²œÿÿÿÿÿ8Üç½Úã,
-ssquid:S00100«"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¬’ûÿÿÿÿ8Üç½Úã,
-osquid:CommentedOutCodeLine²"<This block of commented-out lines of code should be removed.(»Ý²œÿÿÿÿÿ8Üç½Úã,
-dsquid:S2184¾"ECast one of the operands of this subtraction operation to a "double".(¼·ƒ‰8‰‹ÂÚã,
-nsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(ËÄ—øùÿÿÿÿ8ÔìŽÖã,
-jsquid:CommentedOutCodeLine¾"<This block of commented-out lines of code should be removed.(ëÎõŠ8Üç½Úã,
-usquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 67 to the 15 allowed.(ÙØ¤Þýÿÿÿÿ8Üç½Úã,
-Bsquid:S16592"Declare "i" on a separate line.(ËÄ—øùÿÿÿÿ8ò¿ìÕã,
-Csquid:S1659—"Declare "k" on a separate line.(³›ì³ùÿÿÿÿ8Üç½Úã,
-„squid:S1192"aDefine a constant instead of duplicating this literal "Input salah, masukan input lagi." 3 times.(ûôÉËùÿÿÿÿ8ÔìŽÖã,
-isquid:CommentedOutCodeLine_"<This block of commented-out lines of code should be removed.(ëÎõŠ8ÔìŽÖã,
-squid:UselessImportCheck"QRemove this unnecessary import: java.lang classes are always implicitly imported.(ãø©Æþÿÿÿÿ8ÌúÄ­ã,
-Msquid:S1659"*Declare "user_choice3" on a separate line.(ÁØÇÀýÿÿÿÿ8€·Öã,
-Bsquid:S16592"Declare "j" on a separate line.(ËÄ—øùÿÿÿÿ8ÔìŽÖã,
-jsquid:CommentedOutCodeLineƒ"<This block of commented-out lines of code should be removed.(ÔŽƒå8–úÓÚã,
-Csquid:S1659Ù"Declare "k" on a separate line.(—´²úÿÿÿÿ8Üç½Úã,
-osquid:CommentedOutCodeLine”"<This block of commented-out lines of code should be removed.(ÈµÈ†ýÿÿÿÿ8‰‹ÂÚã,
-ssquid:S00100×"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹†ò‡ûÿÿÿÿ8Üç½Úã,
-nsquid:S00100¶"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(£÷ÑÑ8‰‹ÂÚã,
-jsquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(§¸ÿÍ8‰‹ÂÚã,
-Nsquid:S1066Ë"/Merge this if statement with the enclosing one.(ÿéÎë8Üç½Úã,
-vsquid:S3776«"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(É¬’ûÿÿÿÿ8Üç½Úã,
-osquid:CommentedOutCodeLine·"<This block of commented-out lines of code should be removed.(»Ý²œÿÿÿÿÿ8Üç½Úã,
-osquid:CommentedOutCodeLine·"<This block of commented-out lines of code should be removed.(ê¦ÆÅÿÿÿÿÿ8‰‹ÂÚã,
-osquid:CommentedOutCodeLineÅ"<This block of commented-out lines of code should be removed.(ÈµÈ†ýÿÿÿÿ8‰‹ÂÚã,
-nsquid:S00100…"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ýíµ8‰‹ÂÚã,
-usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÁØÇÀýÿÿÿÿ8€·Öã,
-bsquid:UselessImportCheck"7Remove this unused import 'java.awt.event.ActionEvent'.(Úù“‘8Ü‘þªã,
-dsquid:S2184"ECast one of the operands of this subtraction operation to a "double".(¼·ƒ‰8‰‹ÂÚã,
-Csquid:S1659­"%Declare "isfound" on a separate line.(Íü„p8Üç½Úã,
+¤squid:S1186F"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àÌèâøÿÿÿÿ8Š•‰þá,
