@@ -1,2 +1,2 @@
-x1 = 1.0 - x2
-x2 = x2
+y = 0.0x^6 + 0.32x^1 + 0.003
+Nilai y yang ditafsir untuk x: 0.06700000095367432

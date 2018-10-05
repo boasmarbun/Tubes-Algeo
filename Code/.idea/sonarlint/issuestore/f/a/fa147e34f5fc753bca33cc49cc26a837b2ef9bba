@@ -1,2 +1,48 @@
 
-¤squid:S1186F"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(àÌèâøÿÿÿÿ8Š•‰şá,
+isquid:CommentedOutCodeLine#"<This block of commented-out lines of code should be removed.(…Ú¿¹8ã…èƒä,
+csquid:S1854"@Remove this useless assignment to local variable "user_choice2".(•ƒŸÓùÿÿÿÿ8ã…èƒä,
+isquid:CommentedOutCodeLinej"<This block of commented-out lines of code should be removed.(ëÎõŠ8“¿î…ä,
+ssquid:S00100Ø"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‹†ò‡ûÿÿÿÿ8“¿î…ä,
+usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â­Şåøÿÿÿÿ8ãß‡‡ä,
+gsquid:S2095"IUse try-with-resources or close this "PrintStream" in a "finally" clause.(“†şÉ8ˆ„Ùƒä,
+ssquid:S00100¬"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(É¬’ûÿÿÿÿ8“¿î…ä,
+vsquid:S3776Ù"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ªšßøşÿÿÿÿ8ãß‡‡ä,
+Csquid:S1659Ú"Declare "k" on a separate line.(—´²úÿÿÿÿ8“¿î…ä,
+Fsquid:S1659Ş""Declare "temp" on a separate line.(åï©¦şÿÿÿÿ8ãß‡‡ä,
+Bsquid:S1659="Declare "j" on a separate line.(ËÄ—øùÿÿÿÿ8³‚ş‚ä,
+usquid:S3776"RRefactor this method to reduce its Cognitive Complexity from 68 to the 15 allowed.(ÙØ¤Şıÿÿÿÿ8“¿î…ä,
+vsquid:S3776ô"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(á¦®¡şÿÿÿÿ8›ô…ä,
+qsquid:S3776Ù"RRefactor this method to reduce its Cognitive Complexity from 56 to the 15 allowed.(…é8›ô…ä,
+dsquid:S2184 "ECast one of the operands of this subtraction operation to a "double".(¼·ƒ‰8›ô…ä,
+Tsquid:S1854¨"5Remove this useless assignment to local variable "y".(âŒÊ™8ãß‡‡ä,
+Nsquid:S1066Ì"/Merge this if statement with the enclosing one.(ÿéÎë8“¿î…ä,
+Csquid:S1659®"%Declare "isfound" on a separate line.(Íü„p8“¿î…ä,
+\squid:S1197ô"8Move the array designator from the variable to the type.(á¦®¡şÿÿÿÿ8›ô…ä,
+psquid:S3776—"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(ï¯¯Z8ãß‡‡ä,
+Hsquid:S1659"*Declare "user_choice3" on a separate line.(®“«8³‚ş‚ä,
+Hsquid:S1659"*Declare "user_choice4" on a separate line.(®“«8³‚ş‚ä,
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®“«8³‚ş‚ä,
+nsquid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(ËÄ—øùÿÿÿÿ8³‚ş‚ä,
+„squid:S1192 "aDefine a constant instead of duplicating this literal "Input salah, masukan input lagi." 4 times.(ûôÉËùÿÿÿÿ8³‚ş‚ä,
+Hsquid:S1659"*Declare "user_choice2" on a separate line.(®“«8³‚ş‚ä,
+Bsquid:S1659="Declare "n" on a separate line.(ËÄ—øùÿÿÿÿ8³‚ş‚ä,
+[squid:S1197}"8Move the array designator from the variable to the type.(ü´»‰şÿÿÿÿ8“¿î…ä,
+Csquid:S1659­"Declare "k" on a separate line.(µ„ëŞùÿÿÿÿ8›ô…ä,
+>squid:S1659œ"Declare "y" on a separate line.(·²ô8ãß‡‡ä,
+^squid:S1854"@Remove this useless assignment to local variable "user_choice3".(—õù¢8ã…èƒä,
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®“«8³‚ş‚ä,
+isquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(®“«8³‚ş‚ä,
+dsquid:S2184â"ECast one of the operands of this subtraction operation to a "double".(¼·ƒ‰8´ù…ä,
+vsquid:S3776©"RRefactor this method to reduce its Cognitive Complexity from 27 to the 15 allowed.(ŠßëÃøÿÿÿÿ8›ô…ä,
+vsquid:S00117Ù"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªšßøşÿÿÿÿ8ãß‡‡ä,
+ssquid:S00100Ù"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ªšßøşÿÿÿÿ8´ù…ä,
+msquid:S00100—"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï¯¯Z8›ô…ä,
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®“«8³‚ş‚ä,
+Bsquid:S1659="Declare "i" on a separate line.(ËÄ—øùÿÿÿÿ8³‚ş‚ä,
+Lsquid:S1481Ú"(Remove this unused "brs" local variable.(—´²úÿÿÿÿ8“¿î…ä,
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(®“«8³‚ş‚ä,
+Csquid:S1659ö"Declare "k" on a separate line.(³›ì³ùÿÿÿÿ8›ô…ä,
+]squid:S1854"@Remove this useless assignment to local variable "user_choice4".( ğ¦(8ã…èƒä,
+vsquid:S3776¬"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(É¬’ûÿÿÿÿ8“¿î…ä,
+psquid:S00117—"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ï¯¯Z8ãß‡‡ä,
+squid:UselessImportCheck"QRemove this unnecessary import: java.lang classes are always implicitly imported.(ãø©Æşÿÿÿÿ8³‚ş‚ä,
